@@ -41,6 +41,11 @@ pipeline {
     }
 
     stage('Deployment') {
+      when {
+        expression {
+          currentBuild.result == null || currentBuild.result == 'SUCCESS’
+        }
+      }
       steps {
         input(message: 'Are you willing to deploy the application ?', ok: 'Allons-y Alonzo !')
         echo 'Deployment incoming'
