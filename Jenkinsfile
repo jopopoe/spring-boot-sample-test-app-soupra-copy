@@ -41,6 +41,7 @@ pipeline {
     stage('Deployment') {
       steps {
         echo 'blabla'
+        bat 'mvn -Dtest="com.example.testingweb.functional.**" test'
       }
     }
 
