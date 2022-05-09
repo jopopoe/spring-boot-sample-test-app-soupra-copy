@@ -16,6 +16,7 @@ pipeline {
             echo 'Unit test incoming'
             bat 'mvn -Dtest="com.example.testingweb.smoke.**" test'
             echo 'Unit test done'
+            junit '**/target/surefire-reports/TEST-*.xml'
           }
         }
 
