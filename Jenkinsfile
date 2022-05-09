@@ -42,10 +42,10 @@ pipeline {
 
     stage('Deployment') {
       steps {
+        input(message: 'Are you willing to deploy the application ?', ok: 'Allons-y Alonzo !')
         echo 'Deployment incoming'
         bat 'mvn -B -DskipTests install'
         echo 'Deployment done'
-        input(message: 'Are you willing to deploy the application ?', ok: 'Allons-y Alonzo !')
       }
     }
 
