@@ -6,6 +6,7 @@ pipeline {
         echo 'Build incoming'
         bat 'mvn -B -DskipTests clean package'
         echo 'Build done'
+        archiveArtifacts '**/target/*.jar'
       }
     }
 
